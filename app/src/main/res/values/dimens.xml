@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">11sp</dimen>
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">11sp</dimen>
+    <dimen name="design_bottom_navigation_height" tools:override="true">55dp</dimen>
+
+
+    <!-- text size -->
+    <dimen name="text_size_10">
+        10.0sp
+    </dimen>
+
+    <dimen name="text_size_12">
+        12.0sp
+    </dimen>
+
+    <dimen name="text_size_13">
+        13.0sp
+    </dimen>
+
+    <dimen name="text_size_14">
+        14.0sp
+    </dimen>
+
+    <dimen name="text_size_16">
+        16.0sp
+    </dimen>
+
+    <dimen name="text_size_18">
+        18.0sp
+    </dimen>
+
+    <dimen name="text_size_20">
+        20.0sp
+    </dimen>
+
+    <dimen name="text_size_22">
+        22.0sp
+    </dimen>
+
+    <dimen name="text_size_24">
+        24.0sp
+    </dimen>
+
+    <dimen name="text_size_26">
+        26.0sp
+    </dimen>
+
+    <dimen name="text_size_28">
+        28.0sp
+    </dimen>
+
+    <dimen name="text_size_30">
+        30.0sp
+    </dimen>
+
+    <dimen name="text_size_32">
+        32.0sp
+    </dimen>
+
+    <!-- space -->
+
+    <dimen name="space_0">
+        0.0dp
+    </dimen>
+
+    <dimen name="space_05">
+        0.5dp
+    </dimen>
+
+    <dimen name="space_1">
+        1.0dp
+    </dimen>
+
+    <dimen name="space_2">
+        2.0dp
+    </dimen>
+
+    <dimen name="space_3">
+        3.0dp
+    </dimen>
+
+    <dimen name="space_4">
+        4.0dp
+    </dimen>
+
+    <dimen name="space_5">
+        5.0dp
+    </dimen>
+
+    <dimen name="space_6">
+        6.0dp
+    </dimen>
+
+    <dimen name="space_8">
+        8.0dp
+    </dimen>
+
+    <dimen name="space_10">
+        10.0dp
+    </dimen>
+
+    <dimen name="space_16">
+        16.0dp
+    </dimen>
+
+    <dimen name="space_18">
+        18.0dp
+    </dimen>
+
+    <dimen name="space_20">
+        20.0dp
+    </dimen>
+
+    <dimen name="space_24">
+        24.0dp
+    </dimen>
+
+    <dimen name="space_30">
+        30.0dp
+    </dimen>
+
+    <dimen name="space_32">
+        32.0dp
+    </dimen>
+
+    <dimen name="space_36">
+        36.0dp
+    </dimen>
+
+    <dimen name="space_40">
+        40.0dp
+    </dimen>
+
+    <dimen name="space_44">
+        44.0dp
+    </dimen>
+
+    <dimen name="space_48">
+        48.0dp
+    </dimen>
+
+    <dimen name="space_50">
+        50.0dp
+    </dimen>
+
+    <dimen name="space_55">
+        55.0dp
+    </dimen>
+
+    <dimen name="space_60">
+        60.0dp
+    </dimen>
+
+    <dimen name="space_70">
+        70.0dp
+    </dimen>
+
+    <dimen name="space_75">
+        75.0dp
+    </dimen>
+
+    <dimen name="space_78">
+        78.0dp
+    </dimen>
+
+    <dimen name="space_80">
+        80.0dp
+    </dimen>
+
+    <dimen name="space_85">
+        85.0dp
+    </dimen>
+
+    <dimen name="space_96">
+        96.0dp
+    </dimen>
+
+    <dimen name="space_100">
+        100.0dp
+    </dimen>
+
+    <dimen name="space_120">
+        120.0dp
+    </dimen>
+
+    <dimen name="space_130">
+        130.0dp
+    </dimen>
+
+    <dimen name="space_150">
+        150.0dp
+    </dimen>
+
+    <dimen name="space_200">
+        200.0dp
+    </dimen>
+
+    <dimen name="space_250">
+        250.0dp
+    </dimen>
+
+    <dimen name="space_300">
+        300.0dp
+    </dimen>
+
+    <dimen name="space_350">
+        350.0dp
+    </dimen>
+
+    <dimen name="space_400">
+        400.0dp
+    </dimen>
+
+
+    <dimen name="activity_padding">16dp</dimen>
+    <dimen name="placeholder_image">50dp</dimen>
+    <dimen name="placeholder_text_height">8dp</dimen>
+    <dimen name="activity_padding_horizontal">16dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="name">15dp</dimen>
+    <dimen name="chef">12dp</dimen>
+    <dimen name="timestamp">11dp</dimen>
+    <dimen name="description">15dp</dimen>
+    <dimen name="price">13dp</dimen>
+</resources>

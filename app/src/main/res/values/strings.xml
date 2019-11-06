@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SupperManNH</string>
+    <string name="error_missing_network">mất kết nối mạng</string>
+    <string name="error">kết nối thất bại</string>
+
+
+    <string name="layout1a">Chào mừng bạn đến với NASA</string>
+    <string name="layout1b">Nhà hàng khách sạn tuyệt vời, giúp bạn tận hưởng nhiều món ăn ngon</string>
+    <string name="layout2a">Thông tin chuẩn xác</string>
+    <string name="layout2b">Đọc đánh giá từ hàng triệu nhà hàng,khách sạn từ những khách hàng như bạn</string>
+    <string name="layout3a">An tâm đặt bàn</string>
+    <string name="layout3b">Đặt bàn nhà hàng, khách sạn. Chúng tôi đã kiểm tra hơn 200 trang web để tìm cho bạn giá nhà hàng tốt nhất</string>
+    <string name="layout4a">Tha hồ ăn uống</string>
+    <string name="layout4b">Khi đăng ăn ở nhà hàng, hãy tận hưởng những món ăn ngon chỉ có tại nhà hàng</string>
+    <string name="text_phone_hint">Nhập tài khoản</string>
+    <string name="text_hint_password">Nhập mật khẩu</string>
+    <string name="text_login">Đăng nhập</string>
+    <string name="error_null">Yêu cầu nhập dữ liệu</string>
+    <string name="error_ky_tu">Không được nhập ký tự đặc biệt</string>
+    <string name="error_login">Tài khoản mật khẩu không đúng</string>
+    <string name="hot_line">0961143328</string>
+    <string name="home_dialog_button_text_cancel">Hủy bỏ</string>
+    <string name="register_button_text_confirm">Xác nhận</string>
+</resources>

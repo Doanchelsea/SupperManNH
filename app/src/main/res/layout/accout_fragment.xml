@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/fakeStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/blue" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_account_container_driver_profile"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_120"
+            android:background="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@color/black"
+                android:id="@+id/fragment_account_iv_avatar_driver"
+                android:layout_width="@dimen/space_80"
+                android:layout_height="@dimen/space_80"
+                android:layout_marginStart="@dimen/space_20"
+                app:civ_border_color="@color/gray_50"
+                app:civ_border_width="@dimen/space_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="@dimen/space_20" />
+
+            <TextView
+                android:id="@+id/fragment_account_tv_full_name_driver"
+                android:layout_width="@dimen/space_250"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_8"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/fragment_account_iv_avatar_driver"
+                app:layout_constraintTop_toTopOf="@id/fragment_account_iv_avatar_driver"
+                tools:text="Nhà hàng Nguyễn Văn Đoàn"
+                android:layout_marginLeft="@dimen/space_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:background="@drawable/bg_dialog"
+                android:paddingStart="@dimen/space_8"
+                android:paddingEnd="@dimen/space_8"
+                android:text="Khách hàng"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/fragment_account_tv_full_name_driver"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_account_tv_full_name_driver" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_account_container_profile"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginStart="@dimen/space_10"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/space_5"
+            android:background="@drawable/bg_dialog"
+            app:layout_constraintEnd_toStartOf="@+id/account_container_bill"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_account_container_driver_profile"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_marginRight="@dimen/space_5">
+
+            <ImageView
+                android:layout_width="@dimen/space_60"
+                android:layout_height="@dimen/space_48"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/account_tv_profile"
+                app:layout_constraintEnd_toEndOf="@+id/account_tv_profile"
+                app:layout_constraintStart_toStartOf="@+id/account_tv_profile"
+                app:srcCompat="@drawable/ic_thongtin_canhan" />
+
+            <TextView
+                android:id="@+id/account_tv_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_16"
+                android:text="Thông tin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/account_container_bill"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginStart="@dimen/space_5"
+            android:layout_marginTop="@dimen/space_16"
+            android:layout_marginEnd="@dimen/space_10"
+            android:background="@drawable/bg_dialog"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_account_container_driver_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/fragment_account_container_profile"
+            android:layout_marginLeft="@dimen/space_5"
+            android:layout_marginRight="@dimen/space_10">
+
+            <ImageView
+                android:layout_width="@dimen/space_48"
+                android:layout_height="@dimen/space_48"
+                android:layout_marginBottom="@dimen/space_16"
+                app:layout_constraintBottom_toTopOf="@+id/account_tv_bill"
+                app:layout_constraintEnd_toEndOf="@+id/account_tv_bill"
+                app:layout_constraintStart_toStartOf="@+id/account_tv_bill"
+                android:src="@drawable/iconlichsu" />
+
+            <TextView
+                android:id="@+id/account_tv_bill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_16"
+                android:text="Lịch sử"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/account_container_contact"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginStart="@dimen/space_10"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginEnd="@dimen/space_5"
+            android:background="@drawable/bg_dialog"
+            app:layout_constraintEnd_toStartOf="@+id/fragment_account_container_language"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_account_container_profile"
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_marginRight="@dimen/space_5">
+
+            <ImageView
+                android:layout_width="@dimen/space_48"
+                android:layout_height="@dimen/space_48"
+                android:layout_marginBottom="@dimen/space_16"
+                app:layout_constraintBottom_toTopOf="@+id/account_tv_contact"
+                app:layout_constraintEnd_toEndOf="@+id/account_tv_contact"
+                app:layout_constraintStart_toStartOf="@+id/account_tv_contact"
+                app:srcCompat="@drawable/ic_contactus" />
+
+            <TextView
+                android:id="@+id/account_tv_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_16"
+                android:text="Liên hệ"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_account_container_language"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginStart="@dimen/space_5"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginEnd="@dimen/space_10"
+            android:background="@drawable/bg_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/account_container_contact"
+            app:layout_constraintTop_toBottomOf="@+id/account_container_bill"
+            android:layout_marginLeft="@dimen/space_5"
+            android:layout_marginRight="@dimen/space_10">
+
+            <ImageView
+                android:layout_width="@dimen/space_48"
+                android:layout_height="@dimen/space_48"
+                android:layout_marginBottom="@dimen/space_16"
+                app:layout_constraintBottom_toTopOf="@+id/account_tv_language"
+                app:layout_constraintEnd_toEndOf="@+id/account_tv_language"
+                app:layout_constraintStart_toStartOf="@+id/account_tv_language"
+                app:srcCompat="@drawable/ic_logout" />
+
+            <TextView
+                android:id="@+id/account_tv_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_16"
+                android:text="Đăng xuất"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

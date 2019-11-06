@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="130dp"
+    android:layout_height="130dp"
+    android:background="@drawable/bd_loading_diglog">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dialog_trip_notification_loading_indicator"/>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/dialog_trip_notification_loading_indicator"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="@dimen/space_80"
+        android:layout_height="@dimen/space_80"
+        android:layout_marginTop="@dimen/space_8"
+        android:visibility="visible"
+        app:indicatorColor="#00BCD4"
+        app:indicatorName="LineSpinFadeLoaderIndicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF0000</color>
+    <color name="colorPrimaryDark">#404040</color>
+    <color name="colorAccent">#FF0000</color>
+
+    <color name="colorLayout1">#FF0000</color>
+    <color name="colorLayout2">#DDDDDD</color>
+    <color name="white">#FFFFFF</color>
+
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_90">#E6000000</color>
+    <color name="transparent_50">#80000000</color>
+    <color name="transparent_20">#33000000</color>
+
+    <color name="gray">@android:color/darker_gray</color>
+    <color name="gray_50">#f9f9f9</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_200">#eaeef1</color>
+    <color name="gray_300">#d6d6d6</color>
+    <color name="gray_400">#857c8a92</color>
+    <color name="gray_500">#ababab</color>
+    <color name="gray_650">#7d7d7d</color>
+    <color name="gray_700">#5a5a5a</color>
+    <color name="gray_800">#424242</color>
+
+    <color name="blue">#27D6F4</color>
+
+    <color name="text">#2c2c2c</color>
+    <color name="color_hint">#7c8083</color>
+
+    <color name="black">#000000</color>
+    <color name="black_press">#404040</color>
+
+    <color name="red">#FF0000</color>
+
+    <array name="array_dot_active">
+        <item>@color/colorLayout1</item>
+        <item>@color/colorLayout1</item>
+        <item>@color/colorLayout1</item>
+        <item>@color/colorLayout1</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/colorLayout2</item>
+        <item>@color/colorLayout2</item>
+        <item>@color/colorLayout2</item>
+        <item>@color/colorLayout2</item>
+    </array>
+
+    <color name="hotline_color_button_text">#3F51B5</color>
+</resources>

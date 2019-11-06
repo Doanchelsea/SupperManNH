@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_navigation_menu"
+        android:icon="@drawable/ic_menu_history"
+        android:title="Trang chủ" />
+
+    <item
+        android:id="@+id/menu_navigation_ratting"
+        android:icon="@drawable/icbanan"
+        android:title="Bàn đặt" />
+    <item
+        android:id="@+id/menu_navigation_like"
+        android:icon="@drawable/ic_menu_love"
+        android:title="Yêu thích" />
+    <item
+        android:id="@+id/menu_navigation_thong_tin"
+        android:icon="@drawable/ic_menu_account"
+        android:title="Thông tin" />
+
+</menu>
