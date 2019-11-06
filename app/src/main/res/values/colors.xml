@@ -26,6 +26,7 @@
     <color name="gray_800">#424242</color>
 
     <color name="blue">#27D6F4</color>
+    <color name="blue100">#33FFFF</color>
 
     <color name="text">#2c2c2c</color>
     <color name="color_hint">#7c8083</color>
@@ -50,4 +51,15 @@
     </array>
 
     <color name="hotline_color_button_text">#3F51B5</color>
+
+    <color name="bg_color_alert_dialog">#4CAF50</color>
+    <color name="update_info_color_text_save">#4CAF50</color>
+    <color name="update_info_color_border_avatar">#4CAF50</color>
+
+
+    <color name="colorButtonOrangeClick">#FF5555</color>
+    <color name="colorButtonOrange">#fe9c43</color>
+
+    <color name="colorButtonAddClick">#4CAF50</color>
+    <color name="colorButtonAdd">#CCFF99</color>
 </resources>

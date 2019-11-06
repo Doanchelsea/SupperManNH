@@ -1,7 +1,9 @@
 package com.fpoly.suppermannh.base;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.fpoly.suppermannh.R;
 import com.fpoly.suppermannh.untils.StringUtils;
 import com.trello.rxlifecycle3.components.support.RxFragment;
+
+import java.io.ByteArrayOutputStream;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -109,5 +113,13 @@ public abstract class BaseFragment extends RxFragment {
 
     private FragmentActivity getSupportActivity() {
         return super.getActivity();
+    }
+
+    private String imageToString(Bitmap bitmap){
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
+        byte[]  imageBytes = outputStream.toByteArray();
+        String edcodeImage = Base64.encodeToString(imageBytes,Base64.DEFAULT);
+        return  edcodeImage;
     }
 }

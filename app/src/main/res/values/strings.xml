@@ -21,4 +21,18 @@
     <string name="hot_line">0961143328</string>
     <string name="home_dialog_button_text_cancel">Hủy bỏ</string>
     <string name="register_button_text_confirm">Xác nhận</string>
+    <string name="update_info_label_name_display">Tên hiển thị*:</string>
+    <string name="update_info_label_email">Tài khoản*:</string>
+    <string name="update_info_hint_password">Mật khẩu</string>
+    <string name="update_info_label_phone_display">Số điện thoại*:</string>
+    <string name="update_info_hint_phone_number">Số điện thoại</string>
+    <string name="update_info_hint_username">Tài khoản</string>
+    <string name="succer_account">Cập nhật thông tin thành công</string>
+    <string name="text_password">Mật khẩu*:</string>
+    <string name="update_change_password">Mật khẩu mới*:</string>
+    <string name="change_password">Nhập mật khẩu mới</string>
+    <string name="update_password">Nhập lại mật khẩu*:</string>
+    <string name="update_info_update_password">Nhập lại mật khẩu</string>
+    <string name="button_password">Xác nhận</string>
+    <string name="button_confirm">Xác nhận</string>
 </resources>

@@ -2,7 +2,9 @@ package com.fpoly.suppermannh.base;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +20,8 @@ import com.novoda.merlin.Connectable;
 import com.novoda.merlin.Disconnectable;
 import com.novoda.merlin.Merlin;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
+
+import java.io.ByteArrayOutputStream;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -134,7 +138,16 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         startActivityForResult(intent,1);
-    }protected void loadFullName(String fullName, TextView tvFullName) {
+    }
+    public String imageToString(Bitmap bitmap){
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
+        byte[]  imageBytes = outputStream.toByteArray();
+        String edcodeImage = Base64.encodeToString(imageBytes,Base64.DEFAULT);
+        return  edcodeImage;
+    }
+
+    protected void loadFullName(String fullName, TextView tvFullName) {
         if (StringUtils.isEmpty(fullName) || tvFullName == null) {
             return;
         }

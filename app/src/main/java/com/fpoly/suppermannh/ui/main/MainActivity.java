@@ -66,7 +66,6 @@ public class MainActivity extends BaseActivity implements Connectable, Disconnec
             NAME = dataManager.getName();
             PHONE = dataManager.getphone();
             IMAGES = dataManager.getImage();
-
         }
     }
 

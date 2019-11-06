@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fakeStatusBar">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/activity_update_info_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_48"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/activity_update_info_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:id="@+id/activity_update_info_iv_back"
+                    android:layout_width="@dimen/space_24"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center_vertical"
+                    android:src="@drawable/ic_arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Thông tin"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+                    android:id="@+id/activity_update_info_tv_save"
+                    android:layout_width="@dimen/space_50"
+                    android:layout_height="@dimen/space_50"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:gravity="center"
+                    android:text="Lưu"
+                    android:textColor="@color/update_info_color_text_save"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+                    android:layout_marginRight="@dimen/space_16" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/activity_update_info_iv_avatar_driver"
+            android:layout_width="@dimen/space_120"
+            android:layout_height="@dimen/space_120"
+            android:layout_marginTop="@dimen/space_16"
+            app:civ_border_color="@color/update_info_color_border_avatar"
+            app:civ_border_width="@dimen/space_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_update_info_app_bar"
+            tools:src="@tools:sample/avatars[1]" />
+
+        <TextView
+            android:id="@+id/activity_update_info_tv_display_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_16"
+            android:text="@string/update_info_label_name_display"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_update_info_iv_avatar_driver" />
+
+        <EditText
+            android:id="@+id/activity_update_info_edt_full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_16"
+            android:autofillHints="false"
+            android:background="@drawable/bg_edit_text_enable_update_info"
+            android:hint="Tên"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLength="80"
+            android:padding="@dimen/space_10"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_update_info_tv_display_name" />
+
+        <TextView
+            android:id="@+id/activity_update_info_tv_display_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_16"
+            android:text="@string/update_info_label_phone_display"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_update_info_edt_full_name" />
+
+        <EditText
+            android:id="@+id/activity_update_info_edt_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_16"
+            android:autofillHints="false"
+            android:background="@drawable/bg_edit_text_disable_update_info"
+            android:enabled="false"
+            android:hint="@string/update_info_hint_phone_number"
+            android:inputType="phone"
+            android:maxLength="12"
+            android:padding="@dimen/space_10"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_update_info_tv_display_phone" />
+
+        <TextView
+            android:id="@+id/activity_update_info_tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_16"
+            android:text="@string/update_info_label_email"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_update_info_edt_phone_number" />
+
+        <EditText
+            android:enabled="false"
+            android:id="@+id/activity_update_info_edt_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_16"
+            android:autofillHints="false"
+            android:background="@drawable/bg_edit_text_disable_update_info"
+            android:hint="@string/update_info_hint_username"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:maxLength="80"
+            android:padding="@dimen/space_10"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_update_info_tv_username" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

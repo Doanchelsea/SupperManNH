@@ -8,10 +8,13 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.fpoly.suppermannh.R;
+import com.fpoly.suppermannh.api.Server;
 import com.fpoly.suppermannh.base.BaseFragment;
-import com.fpoly.suppermannh.diglog.HotlineDialog;
+import com.fpoly.suppermannh.model.Contract;
 import com.fpoly.suppermannh.model.local.AppPreferencesHelper;
 import com.fpoly.suppermannh.model.local.DataManager;
+import com.fpoly.suppermannh.ui.account.detail.AccountDetailActivity;
+import com.fpoly.suppermannh.ui.account.password.PasswordActivity;
 import com.fpoly.suppermannh.ui.login.LoginActivity;
 import com.jakewharton.rxbinding3.view.RxView;
 
@@ -21,6 +24,13 @@ import butterknife.BindView;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AccountFragment extends BaseFragment {
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadAvatar(Server.duongdananh+dataManager.getImage(),ivAvatar);
+        loadFullName(dataManager.getName(),tvFullName);
+    }
 
     private SharedPreferences mPrefs;
     private AppPreferencesHelper appPreferencesHelper;
@@ -60,14 +70,13 @@ public class AccountFragment extends BaseFragment {
                 .throttleFirst(2, TimeUnit.SECONDS)
                 .compose(bindToLifecycle())
                 .subscribe(unit -> {
-                    HotlineDialog dialog = HotlineDialog.newInstance("0961143327");
-                    dialog.show(getChildFragmentManager(), dialog.getTag());
+                    PasswordActivity.startActivity(activity);
                 }));
         addDisposable(RxView.clicks(container_thongtin)
                 .throttleFirst(2, TimeUnit.SECONDS)
                 .compose(bindToLifecycle())
                 .subscribe(unit -> {
-//                    ThongTinDetailActivity.startActivity(activity);
+                    AccountDetailActivity.startActivity(activity);
                 }));
         addDisposable(RxView.clicks(container_logout)
                 .throttleFirst(2, TimeUnit.SECONDS)

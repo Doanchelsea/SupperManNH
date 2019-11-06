@@ -3,17 +3,17 @@ package com.fpoly.suppermannh.model.local;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.fpoly.suppermannh.model.Contract;
+
 public class AppPreferencesHelper implements PreferencesHelper {
 
-    private static final String ID = "ID";
-    private static final String NAME = "NAME";
-    private static final String IMAGE = "IMAGE";
-    private static final String LOGGED = "LOGGED";
-    private static final String USERNAME = "USERNAME";
-    private static final String PASSWORD = "PASSWORD";
-    private static final String PHONE = "PHONE";
-
-
+    private static final String ID = Contract.ID;
+    private static final String NAME = Contract.NAME;
+    private static final String IMAGE = Contract.IMAGE;
+    private static final String LOGGED = Contract.LOGGED;
+    private static final String USERNAME = Contract.USERNAME;
+    private static final String PASSWORD = Contract.PASSWORD;
+    private static final String PHONE = Contract.PHONE;
 
     private SharedPreferences mPrefs;
     Context context;

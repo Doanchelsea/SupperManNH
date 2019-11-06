@@ -166,14 +166,14 @@
                 app:layout_constraintBottom_toTopOf="@+id/account_tv_contact"
                 app:layout_constraintEnd_toEndOf="@+id/account_tv_contact"
                 app:layout_constraintStart_toStartOf="@+id/account_tv_contact"
-                app:srcCompat="@drawable/ic_contactus" />
+                app:srcCompat="@drawable/icon_change_password" />
 
             <TextView
                 android:id="@+id/account_tv_contact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/space_16"
-                android:text="Liên hệ"
+                android:text="Đổi mật khẩu"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_14"
                 app:layout_constraintBottom_toBottomOf="parent"
