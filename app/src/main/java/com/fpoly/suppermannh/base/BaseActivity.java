@@ -3,6 +3,7 @@ package com.fpoly.suppermannh.base;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -19,6 +21,7 @@ import com.novoda.merlin.Bindable;
 import com.novoda.merlin.Connectable;
 import com.novoda.merlin.Disconnectable;
 import com.novoda.merlin.Merlin;
+import com.tapadoo.alerter.Alerter;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
 import java.io.ByteArrayOutputStream;
@@ -112,6 +115,15 @@ public abstract class BaseActivity extends RxAppCompatActivity {
             }
         }
     }
+    protected void invisible(final View... views) {
+        if (views != null && views.length > 0) {
+            for (View view : views) {
+                if (view != null) {
+                    view.setVisibility(View.INVISIBLE);
+                }
+            }
+        }
+    }
 
     protected void visible(final View... views) {
         if (views != null && views.length > 0) {
@@ -129,6 +141,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         }
         compositeDisposable.add(disposable);
     }
+
     public void showToastDisconnect() {
         Toasty.warning(this, getString(R.string.error_missing_network), 200).show();
     }
@@ -152,6 +165,30 @@ public abstract class BaseActivity extends RxAppCompatActivity {
             return;
         }
         tvFullName.setText(fullName);
+    }
+
+    public void alerter(int showAlerter){
+        Alerter.create(this)
+                .setTitle(R.string.app_name)
+                .setText(showAlerter)
+                .setDuration(1500)
+                .setBackgroundColorRes(R.color.bg_color_alert_dialog)
+                .show();
+
+    }
+
+    public void alerter(int showAlerter,String showTitle){
+        Alerter.create(this)
+                .setTitle(showTitle)
+                .setText(showAlerter)
+                .setDuration(1500)
+                .setBackgroundColorRes(R.color.bg_color_alert_dialog)
+                .show();
+
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    protected void tint(ImageView imageView, int color){
+        imageView.setImageTintList(getResources().getColorStateList(color));
     }
 
 }

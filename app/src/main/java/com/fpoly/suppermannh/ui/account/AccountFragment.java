@@ -14,6 +14,7 @@ import com.fpoly.suppermannh.model.Contract;
 import com.fpoly.suppermannh.model.local.AppPreferencesHelper;
 import com.fpoly.suppermannh.model.local.DataManager;
 import com.fpoly.suppermannh.ui.account.detail.AccountDetailActivity;
+import com.fpoly.suppermannh.ui.account.history.HistoryActivity;
 import com.fpoly.suppermannh.ui.account.password.PasswordActivity;
 import com.fpoly.suppermannh.ui.login.LoginActivity;
 import com.jakewharton.rxbinding3.view.RxView;
@@ -63,7 +64,7 @@ public class AccountFragment extends BaseFragment {
                 .throttleFirst(2, TimeUnit.SECONDS)
                 .compose(bindToLifecycle())
                 .subscribe(unit -> {
-//                    HistoryActivity.startActivity(activity);
+                    HistoryActivity.startActivity(activity);
                 }));
 
         addDisposable(RxView.clicks(container_lienhe)

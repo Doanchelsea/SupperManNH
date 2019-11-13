@@ -24,7 +24,6 @@ public class AdsViewPagerAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(images[position], container, false);
         container.addView(view);
-
         return view;
     }
 

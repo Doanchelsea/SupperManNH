@@ -2,6 +2,8 @@ package com.fpoly.suppermannh.base;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -13,12 +15,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.fpoly.suppermannh.R;
 import com.fpoly.suppermannh.untils.StringUtils;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.tapadoo.alerter.Alerter;
 import com.trello.rxlifecycle3.components.support.RxFragment;
 
 import java.io.ByteArrayOutputStream;
@@ -121,5 +127,50 @@ public abstract class BaseFragment extends RxFragment {
         byte[]  imageBytes = outputStream.toByteArray();
         String edcodeImage = Base64.encodeToString(imageBytes,Base64.DEFAULT);
         return  edcodeImage;
+    }
+
+    protected void gone(final View... views) {
+        if (views != null && views.length > 0) {
+            for (View view : views) {
+                if (view != null) {
+                    view.setVisibility(View.GONE);
+                }
+            }
+        }
+    }
+    public void alerter(int showAlerter){
+        Alerter.create(activity)
+                .setTitle(R.string.app_name)
+                .setText(showAlerter)
+                .setDuration(1500)
+                .setBackgroundColorRes(R.color.bg_color_alert_dialog)
+                .show();
+
+    }
+    protected void visible(final View... views) {
+        if (views != null && views.length > 0) {
+            for (View view : views) {
+                if (view != null) {
+                    view.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+
+    }
+
+    protected void image(ImageView imageView,int drawable){
+        if (drawable ==0 || imageView == null) {
+            return;
+        }
+        imageView.setImageResource(drawable);
+    }
+    public BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        int wight = 40, height = 70;
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0, 0, wight, height);
+        Bitmap bitmap = Bitmap.createBitmap(wight, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 }

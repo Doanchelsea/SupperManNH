@@ -1,4 +1,5 @@
 <resources>
+    <string name="GOOGLE_API_KEY">AIzaSyA9rTnxqBiap6yioOqcGREcyrcZno2ShGU</string>
     <string name="app_name">SupperManNH</string>
     <string name="error_missing_network">mất kết nối mạng</string>
     <string name="error">kết nối thất bại</string>
@@ -14,6 +15,7 @@
     <string name="layout4b">Khi đăng ăn ở nhà hàng, hãy tận hưởng những món ăn ngon chỉ có tại nhà hàng</string>
     <string name="text_phone_hint">Nhập tài khoản</string>
     <string name="text_hint_password">Nhập mật khẩu</string>
+    <string name="text_hint_coment">Nhập bình luận</string>
     <string name="text_login">Đăng nhập</string>
     <string name="error_null">Yêu cầu nhập dữ liệu</string>
     <string name="error_ky_tu">Không được nhập ký tự đặc biệt</string>
@@ -23,6 +25,7 @@
     <string name="register_button_text_confirm">Xác nhận</string>
     <string name="update_info_label_name_display">Tên hiển thị*:</string>
     <string name="update_info_label_email">Tài khoản*:</string>
+    <string name="comnent">Viết bình luận*:</string>
     <string name="update_info_hint_password">Mật khẩu</string>
     <string name="update_info_label_phone_display">Số điện thoại*:</string>
     <string name="update_info_hint_phone_number">Số điện thoại</string>
@@ -35,4 +38,20 @@
     <string name="update_info_update_password">Nhập lại mật khẩu</string>
     <string name="button_password">Xác nhận</string>
     <string name="button_confirm">Xác nhận</string>
+    <string name="wrong_password">Mật khẩu không đúng</string>
+    <string name="password_not">Mật khẩu không trùng</string>
+    <string name="password_succer">Đổi mật khẩu thành công</string>
+    <string name="error_ratiing">Bạn chưa đánh giá cho nhà hàng</string>
+    <string name="text_ratting">Đánh giá nhà hàng thành công</string>
+
+
+    <string name="text_hotpot">Lẩu nướng</string>
+    <string name="text_dish">Đồ ăn</string>
+    <string name="text_drinks">Nước uống</string>
+    <string name="text_home_houst">Hôm nay bạn muốn ăn ở đâu</string>
+    <string name="error_houst">Đã xem hết các nhà hàng</string>
+    <string name="ratting_count">Đánh giá :</string>
+    <string name="text_account">Món ăn</string>
+    <string name="text_comment">Bình luận</string>
+    <string name="text_marker">Thông tin</string>
 </resources>

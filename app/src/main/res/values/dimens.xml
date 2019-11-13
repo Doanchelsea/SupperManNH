@@ -181,6 +181,10 @@
         100.0dp
     </dimen>
 
+    <dimen name="space_110">
+        110.0dp
+    </dimen>
+
     <dimen name="space_120">
         120.0dp
     </dimen>
@@ -193,6 +197,23 @@
         150.0dp
     </dimen>
 
+    <dimen name="space_160">
+        160.0dp
+    </dimen>
+
+    <dimen name="space_170">
+        170.0dp
+    </dimen>
+
+    <dimen name="space_180">
+        180.0dp
+    </dimen>
+
+    <dimen name="space_190">
+        190.0dp
+    </dimen>
+
+
     <dimen name="space_200">
         200.0dp
     </dimen>
@@ -201,8 +222,40 @@
         250.0dp
     </dimen>
 
+    <dimen name="space_260">
+        260.0dp
+    </dimen>
+
+    <dimen name="space_270">
+        270.0dp
+    </dimen>
+
+    <dimen name="space_280">
+        280.0dp
+    </dimen>
+
+    <dimen name="space_290">
+        290.0dp
+    </dimen>
+
     <dimen name="space_300">
         300.0dp
+    </dimen>
+
+    <dimen name="space_310">
+        310.0dp
+    </dimen>
+
+    <dimen name="space_320">
+        320.0dp
+    </dimen>
+
+    <dimen name="space_330">
+        330.0dp
+    </dimen>
+
+    <dimen name="space_340">
+        340.0dp
     </dimen>
 
     <dimen name="space_350">
@@ -211,6 +264,10 @@
 
     <dimen name="space_400">
         400.0dp
+    </dimen>
+
+    <dimen name="int_80">
+        80
     </dimen>
 
 

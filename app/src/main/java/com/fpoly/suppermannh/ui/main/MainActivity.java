@@ -59,6 +59,7 @@ public class MainActivity extends BaseActivity implements Connectable, Disconnec
         registerBindable(this);
         registerConnectable(this);
         registerDisconnectable(this);
+
         if (dataManager != null){
             ID = dataManager.getID();
             USERNAME = dataManager.getusername();

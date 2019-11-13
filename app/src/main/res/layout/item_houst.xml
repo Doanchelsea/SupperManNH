@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/space_5"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:scaleType="fitXY"
+        android:src="@color/red_100"
+        android:id="@+id/img_item_houst_home"
+        app:riv_corner_radius="@dimen/space_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_120" />
+    <TextView
+        android:maxLines="1"
+        android:lines="1"
+        android:ellipsize="end"
+        android:id="@+id/tv_name_nh_item_houst_home"
+        android:layout_marginTop="@dimen/space_4"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        android:text="Nguyễn Văn Đoàn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:id="@+id/tv_address_item_houst_home"
+        android:layout_marginTop="@dimen/space_2"
+        android:textColor="@color/gray_650"
+        android:textSize="@dimen/text_size_12"
+        android:text="Liên hồng - đan phượng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/space_5"
+    android:padding="@dimen/space_5"
+    android:background="@drawable/bg_dialog"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_history"
+        android:layout_width="@dimen/space_60"
+        android:layout_height="@dimen/space_60" />
+    <TextView
+        android:id="@+id/tv_ban_history"
+        android:layout_marginLeft="@dimen/space_5"
+        android:textStyle="bold"
+        android:text="Bàn 27"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        android:layout_toRightOf="@+id/img_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="@dimen/text_size_14"
+        android:id="@+id/tv_date_history"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginTop="@dimen/space_2"
+        android:layout_marginLeft="@dimen/space_5"
+        android:layout_below="@+id/tv_ban_history"
+        android:layout_toRightOf="@+id/img_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="@dimen/space_2"
+        android:textSize="@dimen/text_size_14"
+        android:id="@+id/tv_price_history"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginLeft="@dimen/space_5"
+        android:layout_below="@+id/tv_date_history"
+        android:layout_toRightOf="@+id/img_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fpoly.suppermannh.ui.account.history.historydetail.HistoryDetailActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/img_history_detail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_200"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/anhnen"
+                app:layout_collapseMode="pin" />
+
+            <androidx.appcompat.widget.Toolbar
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <ImageView
+                    android:id="@+id/activity_register_iv_back_history_detail"
+                    android:layout_width="@dimen/space_24"
+                    android:layout_height="@dimen/space_24"
+                    android:layout_gravity="start|center_horizontal"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_title_history_detail"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:text="Nguyễn Văn Đoàn"
+                    android:paddingLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_60"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_18"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_24" />
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="@dimen/space_5"
+            app:tabMode="scrollable"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:background="@drawable/bg_layout"
+                android:padding="@dimen/space_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/btn_ratting_history_detail"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:id="@+id/tv_name_nh_histoty_detail"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Nguyễn Văn Đoàn"
+                    android:textSize="@dimen/text_size_22"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_40" />
+                <Button
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:textColor="@color/red"
+                    android:text="Đánh giá"
+                    android:id="@+id/btn_ratting_history_detail"
+                    android:layout_alignParentRight="true"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:background="@drawable/button_comment"
+                    android:layout_width="@dimen/space_100"
+                    android:layout_height="@dimen/space_40" />
+                <TextView
+                    android:layout_marginTop="@dimen/space_2"
+                    android:id="@+id/tv_time_history_detail"
+                    android:layout_below="@+id/tv_name_nh_histoty_detail"
+                    android:text="23/12/1999"
+                    android:textColor="@color/gray_650"
+                    android:textSize="@dimen/text_size_16"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginTop="@dimen/space_2"
+                    android:id="@+id/tv_dis_history_detail"
+                    android:layout_below="@+id/tv_time_history_detail"
+                    android:text="Ưu đãi : Giảm giá 15 %"
+                    android:textColor="@color/gray_650"
+                    android:textSize="@dimen/text_size_16"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginTop="@dimen/space_2"
+                    android:id="@+id/tv_price_history_detail"
+                    android:layout_below="@+id/tv_dis_history_detail"
+                    android:text="Hóa đơn : 200.000 VNĐ"
+                    android:textColor="@color/gray_650"
+                    android:textSize="@dimen/text_size_16"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/relative_layout_history"
+                android:layout_marginTop="@dimen/space_5"
+                android:background="@drawable/bg_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/re_history_detail"
+                    android:layout_margin="@dimen/space_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

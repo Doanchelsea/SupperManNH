@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <View
+        android:background="@color/gray_300"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_1"/>
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/space_10"
+        android:layout_marginLeft="@dimen/space_10"
+        android:layout_marginRight="@dimen/space_5"
+        android:layout_marginBottom="@dimen/space_10"
+        android:id="@+id/img_like_fragment"
+        app:riv_corner_radius="@dimen/space_6"
+        android:layout_width="@dimen/space_120"
+        android:layout_height="@dimen/space_85" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/space_10"
+        android:layout_toRightOf="@+id/img_like_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_85">
+    <TextView
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:lines="1"
+        android:layout_toRightOf="@+id/img_like_fragment"
+        android:id="@+id/tv_name_nh_like_fragment"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_18"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_24" />
+    <TextView
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:lines="2"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:layout_below="@+id/tv_name_nh_like_fragment"
+        android:layout_toRightOf="@+id/img_like_fragment"
+        android:layout_marginTop="@dimen/space_10"
+        android:id="@+id/tv_address_like_fragment"
+        android:textColor="@color/gray_500"
+        android:textSize="@dimen/text_size_14"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_50" />
+    </LinearLayout>
+</RelativeLayout>

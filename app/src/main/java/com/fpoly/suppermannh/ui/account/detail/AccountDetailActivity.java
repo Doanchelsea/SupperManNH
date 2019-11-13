@@ -181,12 +181,7 @@ public class AccountDetailActivity extends BaseActivity implements Connectable, 
         ShowLoading(false);
         dataManager.updateUserInfoSharedPreference(MainActivity.ID,name,images,
                 MainActivity.USERNAME,MainActivity.PASSWORD,MainActivity.PHONE,true);
-        Alerter.create(this)
-                .setTitle(R.string.app_name)
-                .setText(R.string.succer_account)
-                .setDuration(1500)
-                .setBackgroundColorRes(R.color.bg_color_alert_dialog)
-                .show();
+        alerter(R.string.succer_account);
         addDisposable(Observable.just(0).delay(1600, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

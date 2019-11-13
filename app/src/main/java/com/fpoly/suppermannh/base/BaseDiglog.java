@@ -21,7 +21,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 public abstract class BaseDiglog extends RxDialogFragment {
-    public static final int DISTANCE_1000_METTER = 1000;
+
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
     private LayoutInflater inflater;
     protected FragmentActivity activity;

@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class    FormatUtils {
+public class   FormatUtils {
     private static final String PATTERN_ESTIMATED_PRICE = "###,###,###";
     private static final String PATTERN_ESTIMATED_DISTANCE = "###,###.#";
     private static final String PATTERN_ESTIMATED_DURATION = "###,###,###";

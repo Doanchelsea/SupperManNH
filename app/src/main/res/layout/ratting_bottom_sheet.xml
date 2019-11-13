@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/space_20"
+    android:orientation="vertical">
+   <RelativeLayout
+       android:background="@color/gray_100"
+       android:id="@+id/relative_layout_history_detail"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/space_50">
+      <TextView
+          android:gravity="center"
+          android:textStyle="bold"
+          android:textSize="@dimen/text_size_18"
+          android:textColor="@color/black"
+          android:text="Đánh giá"
+          android:id="@+id/tv_danh_gia"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/space_50" />
+      <ImageView
+          android:id="@+id/img_clear_diglog_history_detail"
+          android:layout_marginLeft="@dimen/space_10"
+          android:src="@drawable/ic_clear_black_24dp"
+          android:layout_width="@dimen/space_24"
+          android:layout_height="@dimen/space_50" />
+   </RelativeLayout>
+
+
+   <RatingBar
+       android:layout_marginTop="@dimen/space_10"
+       android:layout_below="@+id/relative_layout_history_detail"
+       android:id="@+id/rattingBar_history_detail"
+       android:isIndicator="false"
+       android:stepSize="1"
+       android:progressBackgroundTint="@color/gray_300"
+       android:progressTint="@color/yellow"
+       style="?android:attr/ratingBarStyleIndicator"
+       android:numStars="5"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
+   <TextView
+       android:layout_marginTop="@dimen/space_16"
+       android:textColor="@color/black"
+       android:text="@string/comnent"
+       android:textSize="@dimen/text_size_16"
+       android:layout_marginBottom="@dimen/space_6"
+       android:layout_marginLeft="@dimen/space_10"
+       android:layout_marginRight="@dimen/space_10"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" />
+   <EditText
+       android:id="@+id/edt_comment_history_detail"
+       android:hint="@string/text_hint_coment"
+       android:layout_margin="@dimen/space_10"
+       android:background="@drawable/inputlayout"
+       android:layout_width="match_parent"
+       android:padding="@dimen/space_10"
+       android:layout_height="wrap_content" />
+   <Button
+       android:id="@+id/btn_xac_nhan_ratting_history"
+       android:textAllCaps="false"
+       android:text="Xác nhận"
+       android:textSize="@dimen/text_size_16"
+       android:textColor="@color/white"
+       android:background="@drawable/button_ratting"
+       android:layout_margin="@dimen/space_10"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/space_44" />
+</LinearLayout>

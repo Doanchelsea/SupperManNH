@@ -90,7 +90,7 @@ public class LoginActivity extends BaseActivity implements Connectable, Disconne
             String pass = edtPassword.getText().toString().trim();
             if (StringUtils.isEmpty(user) || StringUtils.isEmpty(pass)){
                 Toasty.warning(this,R.string.error_null).show();
-            }else if (!ValidateUtils.isVaidFullName(user) || !ValidateUtils.isVaidFullName(pass)){
+            }else if (!ValidateUtils.isVaidFullName(user)){
                 Toasty.warning(this,R.string.error_ky_tu).show();
             }else {
                 showLoading(true);

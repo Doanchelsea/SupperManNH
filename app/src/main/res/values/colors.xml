@@ -24,6 +24,15 @@
     <color name="gray_650">#7d7d7d</color>
     <color name="gray_700">#5a5a5a</color>
     <color name="gray_800">#424242</color>
+    <color name="green">#00FF00</color>
+    <color name="green_100">#00EE00</color>
+    <color name="green_200">#00DD00</color>
+    <color name="green_300">#00CC00</color>
+    <color name="green_400">#00BB00</color>
+    <color name="green_500">#00AA00</color>
+
+    <color name="yellow">#FFB90F</color>
+
 
     <color name="blue">#27D6F4</color>
     <color name="blue100">#33FFFF</color>
@@ -35,6 +44,7 @@
     <color name="black_press">#404040</color>
 
     <color name="red">#FF0000</color>
+    <color name="red_100">#FF4040</color>
 
     <array name="array_dot_active">
         <item>@color/colorLayout1</item>
@@ -62,4 +72,5 @@
 
     <color name="colorButtonAddClick">#4CAF50</color>
     <color name="colorButtonAdd">#CCFF99</color>
+    <color name="orange">#F4A460</color>
 </resources>

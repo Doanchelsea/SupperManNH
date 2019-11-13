@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.account.password.PasswordActivity"></activity>
+        <activity android:name=".ui.home.homedetail.HomeDetailActivity"></activity>
+        <activity android:name=".ui.account.history.historydetail.HistoryDetailActivity" />
+        <activity android:name=".ui.account.history.HistoryActivity" />
+        <activity android:name=".ui.account.password.PasswordActivity" />
         <activity android:name=".ui.account.detail.AccountDetailActivity" />
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.ads.AdsActivity" />
@@ -21,6 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GOOGLE_API_KEY" />
     </application>
 
 </manifest>
