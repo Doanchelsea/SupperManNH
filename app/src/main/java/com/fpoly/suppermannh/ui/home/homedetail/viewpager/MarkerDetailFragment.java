@@ -18,6 +18,11 @@ import butterknife.BindView;
 public class MarkerDetailFragment extends BaseFragment implements OnMapReadyCallback {
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     @BindView(R.id.tv_address_marker_fragemnt)
     TextView tv_address_marker_fragemnt;
     private GoogleMap driverMap;
@@ -62,18 +67,16 @@ public class MarkerDetailFragment extends BaseFragment implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
         driverMap = googleMap;
-
         LatLng currentLatLng = new LatLng(houst.getLat(), houst.getLng());
-
         driverMap.addMarker(new MarkerOptions().position(currentLatLng)
-                .title(houst.getNames())
-                .icon(bitmapDescriptorFromVector(activity,R.drawable.logoapp)));
+                .title(houst.getNames()));
+//                .icon(bitmapDescriptorFromVector(activity,R.drawable.logoapp)));
         driverMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 16));
     }
+
     private void initMap() {
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.driver_map);
-
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }

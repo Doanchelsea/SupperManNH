@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context="com.fpoly.suppermannh.ui.online.detail.OnlineDetailActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_dat_ban"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/space_48"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <ImageView
+        android:id="@+id/activity_register_iv_back_dat_ban"
+        android:layout_width="@dimen/space_24"
+        android:layout_height="@dimen/space_24"
+        android:layout_gravity="start|center_horizontal"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_arrow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Đặt bàn"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_20" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_dat_ban"
+        app:layout_constraintBottom_toTopOf="@+id/tv_dat_ban"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <fragment
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/driver_map_dat_ban"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_200"/>
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/tv_name_nh_online_detail"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            android:text="Nhà hàng"
+            android:layout_margin="@dimen/space_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/driver_map_dat_ban"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/tv_name_mon_an_online_detail"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            android:text="Lẩu thái"
+            android:layout_margin="@dimen/space_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_nh_online_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_margin="@dimen/space_10"
+            android:id="@+id/tv_giam_gia_online_detail"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_16"
+            android:text="giảm 15%"
+            app:layout_constraintStart_toEndOf="@+id/tv_name_mon_an_online_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_nh_online_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:id="@+id/view_online_detail"
+            android:layout_marginTop="@dimen/space_10"
+            app:layout_constraintTop_toBottomOf="@+id/tv_giam_gia_online_detail"
+            android:background="@color/gray_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_10"/>
+        <TextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:id="@+id/tv_user_online_detail"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            android:text="Nguyễn Văn Đoàn - 0961143327"
+            android:layout_margin="@dimen/space_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_online_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_so_luong"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/black"
+            android:text=""
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_marginTop="@dimen/space_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_online_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_Sua"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/blue200"
+            android:text="Sửa"
+            android:layout_marginRight="@dimen/space_10"
+            android:layout_marginTop="@dimen/space_4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_online_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_dat_ban"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16"
+        android:text="Đặt bàn"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="@dimen/space_120"
+        android:layout_height="@dimen/space_40" />
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16"
+        android:textStyle="bold"
+        android:text="Số lượng : 1 - Ngày 20/10"
+        android:id="@+id/tv_date_dat_ban"
+        android:background="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/tv_dat_ban"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/space_40" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

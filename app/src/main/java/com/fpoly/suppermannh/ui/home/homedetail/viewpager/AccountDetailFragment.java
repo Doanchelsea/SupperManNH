@@ -1,7 +1,6 @@
 package com.fpoly.suppermannh.ui.home.homedetail.viewpager;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -11,21 +10,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fpoly.suppermannh.R;
 import com.fpoly.suppermannh.base.BaseFragment;
+import com.fpoly.suppermannh.lisenner.MenuLisenner;
 import com.fpoly.suppermannh.model.Houst;
 import com.fpoly.suppermannh.model.Menu;
-import com.fpoly.suppermannh.model.MenuAdapter;
+import com.fpoly.suppermannh.ui.home.adapter.MenuAdapter;
 import com.fpoly.suppermannh.ui.home.homedetail.viewpager.contract.AccountContract;
 import com.fpoly.suppermannh.ui.home.homedetail.viewpager.presenter.AccoutDetailPresenter;
-import com.jakewharton.rxbinding3.view.RxView;
+import com.fpoly.suppermannh.ui.online.OnlineActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import es.dmoral.toasty.Toasty;
 
-public class AccountDetailFragment extends BaseFragment implements AccountContract {
+public class AccountDetailFragment extends BaseFragment implements AccountContract, MenuLisenner {
     boolean hotpot ;
     boolean dish ;
     boolean drinks;
@@ -193,23 +192,27 @@ public class AccountDetailFragment extends BaseFragment implements AccountContra
 
     private void initData(){
         manager = new LinearLayoutManager(context);
-        menuAdapter = new MenuAdapter(context,menus);
+        menuAdapter = new MenuAdapter(this,context,menus);
         recycler_view_hotpot_home_detail.setHasFixedSize(true);
         recycler_view_hotpot_home_detail.setLayoutManager(manager);
         recycler_view_hotpot_home_detail.setAdapter(menuAdapter);
 
         managerdish = new LinearLayoutManager(context);
-        menuAdapterdish = new MenuAdapter(context,menusdish);
+        menuAdapterdish = new MenuAdapter(this,context,menusdish);
         recycler_view_dish_home_detail.setHasFixedSize(true);
         recycler_view_dish_home_detail.setLayoutManager(managerdish);
         recycler_view_dish_home_detail.setAdapter(menuAdapterdish);
 
-
         managerdrinks = new LinearLayoutManager(context);
-        menuAdapterdrinks = new MenuAdapter(context,menusdrinks);
+        menuAdapterdrinks = new MenuAdapter(this,context,menusdrinks);
         recycler_view_drinks_home_detail.setHasFixedSize(true);
         recycler_view_drinks_home_detail.setLayoutManager(managerdrinks);
         recycler_view_drinks_home_detail.setAdapter(menuAdapterdrinks);
 
+    }
+
+    @Override
+    public void menu(Menu menu) {
+        OnlineActivity.startActivity(activity,menu,houst);
     }
 }

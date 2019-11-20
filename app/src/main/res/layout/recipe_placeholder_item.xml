@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="@dimen/space_5"
+        android:id="@+id/constraintLayout_one_recipe"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout_two_recipe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_marginTop="@dimen/space_10"
+        app:riv_corner_radius="@dimen/space_10"
+        android:id="@+id/roundedImageView_one_recipe"
+        android:background="@color/placeholder_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/space_100" />
+
+        <View
+            android:id="@+id/view_one_item_one"
+            android:layout_marginTop="@dimen/space_6"
+            android:background="@color/placeholder_bg"
+            app:layout_constraintTop_toBottomOf="@+id/roundedImageView_one_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_16"/>
+
+        <View
+            android:id="@+id/view_one_item_two"
+            android:layout_marginTop="@dimen/space_6"
+            android:background="@color/placeholder_bg"
+            app:layout_constraintTop_toBottomOf="@+id/view_one_item_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_10"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="@dimen/space_5"
+        android:id="@+id/constraintLayout_two_recipe"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout_one_recipe"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/roundedImageView_two_recipe"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_100"
+            android:layout_marginTop="10dp"
+            android:background="@color/placeholder_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/space_10" />
+
+        <View
+            android:id="@+id/view_two_item_one"
+            android:layout_marginTop="@dimen/space_6"
+            android:background="@color/placeholder_bg"
+            app:layout_constraintTop_toBottomOf="@+id/roundedImageView_two_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_16"/>
+
+        <View
+            android:id="@+id/view_two_item_two"
+            android:layout_marginTop="@dimen/space_6"
+            android:background="@color/placeholder_bg"
+            app:layout_constraintTop_toBottomOf="@+id/view_two_item_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_10"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

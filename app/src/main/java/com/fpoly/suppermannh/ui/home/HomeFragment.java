@@ -15,14 +15,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.fpoly.suppermannh.R;
 import com.fpoly.suppermannh.base.BaseFragment;
 import com.fpoly.suppermannh.lisenner.HomeLisenner;
 import com.fpoly.suppermannh.model.Houst;
+import com.fpoly.suppermannh.model.LoadingDialog;
 import com.fpoly.suppermannh.ui.account.AccountFragment;
 import com.fpoly.suppermannh.ui.ads.AdsActivity;
 import com.fpoly.suppermannh.ui.home.adapter.HoustAdapter;
 import com.fpoly.suppermannh.ui.home.homedetail.HomeDetailActivity;
+import com.fpoly.suppermannh.ui.home.menudetail.MenuDetailActivity;
 import com.fpoly.suppermannh.ui.home.viewpager.SlideViewPager;
 import com.fpoly.suppermannh.untils.MyTimerTask;
 import com.jakewharton.rxbinding3.view.RxView;
@@ -60,6 +63,10 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
     Button btn_load_more_home;
     @BindView(R.id.nestedScrollView_home_fragment)
     NestedScrollView nestedScrollView_home_fragment;
+    @BindView(R.id.shimmer_view_containeroff)
+    ShimmerFrameLayout shimmerFrameLayout;
+    @BindView(R.id.constraintLayout_home_fragment)
+    ConstraintLayout constraintLayout;
     List<Houst> housts = new ArrayList<>();
     HoustAdapter houstAdapter;
     LinearLayoutManager manager = new GridLayoutManager(activity,2);
@@ -78,7 +85,6 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
     @Override
     public void onResume() {
         super.onResume();
-
         page = 1;
         count = 8;
         presenter.getDataHoust(housts,page,count);
@@ -93,6 +99,19 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
     }
 
     @Override
+    public void onStart() {
+        shimmerFrameLayout.startShimmer();
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        shimmerFrameLayout.stopShimmer();
+        showLoading(false);
+        super.onStop();
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
         housts.clear();
@@ -100,8 +119,25 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
 
     @Override
     protected void addEvents() {
+        nestedScrollView_home_fragment.getParent().requestChildFocus(nestedScrollView_home_fragment, nestedScrollView_home_fragment);
         presenter.layoutParams(dots,dotscount,linearLayout);
         presenter.setPosition(viewPager,dots,dotscount);
+
+        addDisposable(RxView.clicks(constraintLayout_hotpot_home)
+                .throttleFirst(1,TimeUnit.SECONDS)
+                .subscribe(unit -> {
+                    MenuDetailActivity.startActivity(activity,1);
+                }));
+        addDisposable(RxView.clicks(constraintLayout_hotpot_dish)
+                .throttleFirst(1,TimeUnit.SECONDS)
+                .subscribe(unit -> {
+                    MenuDetailActivity.startActivity(activity,2);
+                }));
+        addDisposable(RxView.clicks(constraintLayout_hotpot_drinks)
+                .throttleFirst(1,TimeUnit.SECONDS)
+                .subscribe(unit -> {
+                    MenuDetailActivity.startActivity(activity,3);
+                }));
 
     }
 
@@ -112,17 +148,19 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
 
     @Override
     protected void initDatas() {
-        SlideViewPager slideViewPager = new SlideViewPager(activity);
+        houstAdapter = new HoustAdapter(activity,housts,this);
+
+        recycler_view_houst_home.setHasFixedSize(true);
+        recycler_view_houst_home.setLayoutManager(manager);
+        recycler_view_houst_home.setAdapter(houstAdapter);
+
+        SlideViewPager slideViewPager = new SlideViewPager(this,housts,activity);
         viewPager.setAdapter(slideViewPager);
         dotscount = slideViewPager.getCount();
         dots = new RoundedImageView[dotscount];
         myTimerTask = new MyTimerTask(activity,viewPager);
         presenter = new HomePresenter(activity,myTimerTask,this);
 
-        houstAdapter = new HoustAdapter(activity,housts,this);
-        recycler_view_houst_home.setHasFixedSize(true);
-        recycler_view_houst_home.setLayoutManager(manager);
-        recycler_view_houst_home.setAdapter(houstAdapter);
     }
 
     @Override
@@ -137,12 +175,17 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
 
     @Override
     public void showError(int error) {
+        shimmerFrameLayout.stopShimmer();
+        gone(shimmerFrameLayout);
         Toasty.error(activity,error).show();
     }
 
     @Override
     public void showSuccess() {
+        visible(constraintLayout);
         houstAdapter.notifyDataSetChanged();
+        shimmerFrameLayout.stopShimmer();
+        gone(shimmerFrameLayout);
     }
 
     @Override
@@ -152,7 +195,18 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
     }
 
     @Override
+    public void showLoading(boolean show) {
+
+        if (show){
+            LoadingDialog.getInstance().showLoading(activity);
+        }else {
+            LoadingDialog.getInstance().hideLoading();
+        }
+    }
+
+    @Override
     public void onClick(Houst houst) {
+        showLoading(true);
         HomeDetailActivity.startActivity(activity,houst);
     }
 }

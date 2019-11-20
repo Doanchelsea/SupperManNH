@@ -16,6 +16,7 @@ public class   FormatUtils {
     private static final String PATTERN_DATE1 = "dd/MM/yyyy";
     private static final String PATTERN_DATE2 = "HH:mm";
     private static final String PATTERN_DATE3 = "HH";
+    private static final String PATTERN_DATE4 = "EEEE - dd/MM/yyyy";
 
 
     public static String convertEstimatedPrice(double estimatedPrice) {
@@ -41,6 +42,10 @@ public class   FormatUtils {
     }
     public static String convertEstimatedDate2(Date estimatedPrice) {
         SimpleDateFormat format = new SimpleDateFormat(PATTERN_DATE2);
+        return format.format(estimatedPrice);
+    }
+    public static String convertEstimatedDate4(Date estimatedPrice) {
+        SimpleDateFormat format = new SimpleDateFormat(PATTERN_DATE4);
         return format.format(estimatedPrice);
     }
 

@@ -2,6 +2,10 @@ package com.fpoly.suppermannh.model.local;
 
 public interface PreferencesHelper {
 
+    void setToken(String token);
+
+    String getToken();
+
     void setLoggedIn(boolean isLoggedIn);
 
     boolean IsLoggedIn();

@@ -19,9 +19,11 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:contentScrim="@color/white"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5"
                 android:adjustViewBounds="true"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_340">
@@ -31,8 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/space_200"
                 android:scaleType="fitXY"
-                android:src="@drawable/anhnen"
-                app:layout_collapseMode="pin" />
+                android:src="@drawable/anhnen" />
 
             <RelativeLayout
                 android:layout_marginBottom="@dimen/space_50"
@@ -154,23 +155,98 @@
 
             </androidx.appcompat.widget.Toolbar>
 
-            <com.google.android.material.tabs.TabLayout
-                android:layout_gravity="bottom"
-                app:tabTextColor="@color/black"
-                android:background="@color/white"
-                android:id="@+id/tab_layout_home_detail"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/space_50">
-            </com.google.android.material.tabs.TabLayout>
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_gravity="bottom"
+               android:background="@color/white"
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/space_50">
+
+               <LinearLayout
+                   android:gravity="bottom"
+                   app:layout_constraintTop_toTopOf="parent"
+                   android:id="@+id/linearLayout_one_tab"
+                   app:layout_constraintEnd_toStartOf="@+id/linearLayout_two_tab"
+                   app:layout_constraintStart_toStartOf="parent"
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+
+                   <TextView
+                       android:id="@+id/tv_tab_one_home_detail"
+                       android:textStyle="bold"
+                       android:gravity="center"
+                       android:textColor="@color/black"
+                       android:text="Món ăn"
+                       android:textSize="@dimen/text_size_16"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent" />
+                   <View
+                       android:id="@+id/view_tab_one_home_detail"
+                       android:layout_gravity="center"
+                       android:background="@color/blue200"
+                       android:layout_width="@dimen/space_60"
+                       android:layout_height="@dimen/space_2"/>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:gravity="bottom"
+                   android:id="@+id/linearLayout_two_tab"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintStart_toEndOf="@id/linearLayout_one_tab"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+                   <TextView
+                       android:id="@+id/tv_tab_two_home_detail"
+                       android:textStyle="bold"
+                       android:gravity="center"
+                       android:textColor="@color/black"
+                       android:text="Thông tin"
+                       android:textSize="@dimen/text_size_14"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent" />
+                   <View
+                       android:id="@+id/view_tab_two_home_detail"
+                       android:layout_gravity="center"
+                       android:background="@color/blue200"
+                       android:layout_width="@dimen/space_60"
+                       android:layout_height="@dimen/space_2"/>
+
+               </LinearLayout>
+               <View
+                   android:background="@color/gray_400"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/space_1"/>
+           </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--<com.google.android.material.tabs.TabLayout-->
+                <!--android:layout_gravity="bottom"-->
+                <!--app:tabTextColor="@color/black"-->
+                <!--android:background="@color/white"-->
+                <!--android:id="@+id/tab_layout_home_detail"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/space_50">-->
+            <!--</com.google.android.material.tabs.TabLayout>-->
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager_home_detail"
+    <!--<androidx.viewpager.widget.ViewPager-->
+        <!--android:id="@+id/view_pager_home_detail"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+        <!---->
+    <!--</androidx.viewpager.widget.ViewPager>-->
+
+    <FrameLayout
+        android:id="@+id/main_container_home_detail"
+        app:layout_behavior ="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"></androidx.viewpager.widget.ViewPager>
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

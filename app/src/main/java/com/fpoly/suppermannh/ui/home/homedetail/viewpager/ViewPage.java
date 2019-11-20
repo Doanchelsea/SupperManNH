@@ -22,7 +22,6 @@ public class ViewPage extends FragmentPagerAdapter {
     public Fragment getItem(int i) {
 
         switch (i){
-
             case 0:
                 AccountDetailFragment accountDetailFragment = AccountDetailFragment.newInstance(houst);
                 return accountDetailFragment;

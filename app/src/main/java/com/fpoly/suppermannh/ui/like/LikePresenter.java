@@ -69,7 +69,6 @@ public class LikePresenter {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> hashMap = new HashMap<>();
-                Log.d("adadadad",idlogin);
                 hashMap.put("iduser",idlogin);
                 return hashMap;
 

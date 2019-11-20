@@ -36,6 +36,7 @@
 
     <color name="blue">#27D6F4</color>
     <color name="blue100">#33FFFF</color>
+    <color name="blue200">#304FFE</color>
 
     <color name="text">#2c2c2c</color>
     <color name="color_hint">#7c8083</color>
@@ -59,6 +60,8 @@
         <item>@color/colorLayout2</item>
         <item>@color/colorLayout2</item>
     </array>
+
+    <color name="placeholder_bg">#dddddd</color>
 
     <color name="hotline_color_button_text">#3F51B5</color>
 

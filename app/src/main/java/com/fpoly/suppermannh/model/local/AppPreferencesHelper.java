@@ -14,6 +14,7 @@ public class AppPreferencesHelper implements PreferencesHelper {
     private static final String USERNAME = Contract.USERNAME;
     private static final String PASSWORD = Contract.PASSWORD;
     private static final String PHONE = Contract.PHONE;
+    private static final String TOKEN = Contract.TOKEN;
 
     private SharedPreferences mPrefs;
     Context context;
@@ -21,6 +22,16 @@ public class AppPreferencesHelper implements PreferencesHelper {
     public AppPreferencesHelper(SharedPreferences mPrefs, Context context) {
         this.mPrefs = mPrefs;
         this.context = context;
+    }
+
+    @Override
+    public void setToken(String token) {
+        mPrefs.edit().putString(TOKEN,token).apply();
+    }
+
+    @Override
+    public String getToken() {
+        return mPrefs.getString(TOKEN,"");
     }
 
     @Override

@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "61463578226",
-    "firebase_url": "https://supperman-d113b.firebaseio.com",
-    "project_id": "supperman-d113b",
-    "storage_bucket": "supperman-d113b.appspot.com"
+    "project_number": "637798584343",
+    "firebase_url": "https://suppermannhduan2.firebaseio.com",
+    "project_id": "suppermannhduan2",
+    "storage_bucket": "suppermannhduan2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:61463578226:android:f72a9a5ed822f55675a4eb",
+        "mobilesdk_app_id": "1:637798584343:android:43ac32c970c8bd115e0c52",
         "android_client_info": {
           "package_name": "com.example.supperman_nh_duan2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "61463578226-dgkkkhkkggfacbb3rmovtnup08kvfm6q.apps.googleusercontent.com",
+          "client_id": "637798584343-k0esu066v788jnmqdbd5atok0614jpgv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.supperman_nh_duan2",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "61463578226-eldvdo1f3b94umrvjj3litj06v2dek6h.apps.googleusercontent.com",
+          "client_id": "637798584343-19geghqna9i64d0m6h1q129amds23v4r.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyABXB6zY2gdyteM63WMpsFIKQJkxJ4EeR4"
+          "current_key": "AIzaSyAmnAGX1SM3O4hZPf14w_pkmVGqSpRKGbA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "61463578226-eldvdo1f3b94umrvjj3litj06v2dek6h.apps.googleusercontent.com",
+              "client_id": "637798584343-19geghqna9i64d0m6h1q129amds23v4r.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -45,35 +45,35 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:61463578226:android:1bcb2ebbc73167e375a4eb",
+        "mobilesdk_app_id": "1:637798584343:android:6ba0fea674cb84255e0c52",
         "android_client_info": {
-          "package_name": "com.example.suppermannh"
+          "package_name": "com.fpoly.suppermannh"
         }
       },
       "oauth_client": [
         {
-          "client_id": "61463578226-28ra9s35tid5ttgm5mcgqef4gui7p07e.apps.googleusercontent.com",
+          "client_id": "637798584343-pia78snci89enrps9ib17pl9itt22h8d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.suppermannh",
+            "package_name": "com.fpoly.suppermannh",
             "certificate_hash": "b839b804617f3e44987131e286785f3099a7fa02"
           }
         },
         {
-          "client_id": "61463578226-eldvdo1f3b94umrvjj3litj06v2dek6h.apps.googleusercontent.com",
+          "client_id": "637798584343-19geghqna9i64d0m6h1q129amds23v4r.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyABXB6zY2gdyteM63WMpsFIKQJkxJ4EeR4"
+          "current_key": "AIzaSyAmnAGX1SM3O4hZPf14w_pkmVGqSpRKGbA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "61463578226-eldvdo1f3b94umrvjj3litj06v2dek6h.apps.googleusercontent.com",
+              "client_id": "637798584343-19geghqna9i64d0m6h1q129amds23v4r.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/gray_100"
+    android:layout_height="match_parent"
+    tools:context="com.fpoly.suppermannh.ui.online.OnlineActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_online"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/space_180">
+
+        <ImageView
+            android:id="@+id/img_online_nh"
+            android:scaleType="fitXY"
+            android:src="@color/gray"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_180" />
+        <ImageView
+            android:id="@+id/img_back_online"
+            android:tint="@color/white"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginLeft="@dimen/space_16"
+            android:src="@drawable/ic_arrow"
+            android:layout_width="@dimen/space_24"
+            android:layout_height="@dimen/space_24" />
+        <TextView
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_above="@+id/tv_address_online"
+            android:id="@+id/tv_name_nh_online"
+            android:textColor="@color/white"
+            android:text="Nguyễn Văn Đoàn"
+            android:textSize="@dimen/text_size_16"
+            android:layout_width="@dimen/space_300"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:id="@+id/tv_address_online"
+            android:layout_marginTop="@dimen/space_2"
+            android:layout_marginBottom="@dimen/space_5"
+            android:layout_marginLeft="@dimen/space_10"
+            android:textColor="@color/gray_200"
+            android:text="Liên hồng đãn phượng hà nội"
+            android:textSize="@dimen/text_size_14"
+            android:layout_alignParentBottom="true"
+            android:layout_width="@dimen/space_300"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:padding="@dimen/space_10"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout_online"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_date_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            android:text="Cả ngày - "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_toRightOf="@+id/tv_date_time"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_16"
+            android:text="Giảm 15%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_name_mon_an_online"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:layout_below="@+id/tv_date_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            android:text="Lẩu thái siêu cay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_online_mon_an"
+            android:layout_marginTop="@dimen/space_5"
+            android:layout_below="@+id/tv_name_mon_an_online"
+            android:scaleType="fitXY"
+            android:src="@color/red"
+            app:riv_corner_radius="@dimen/space_4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_180" />
+        <TextView
+            android:id="@+id/tv_time_online"
+            android:layout_marginTop="@dimen/space_10"
+            android:textColor="@color/black"
+            android:text="Hôm nay - 13/11/2019"
+            android:drawableRight="@drawable/ic_expand_more_black_24dp"
+            android:gravity="center"
+            android:layout_below="@+id/img_online_mon_an"
+            android:textSize="@dimen/text_size_14"
+            android:background="@color/gray_300"
+            android:padding="@dimen/space_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_online"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_below="@+id/tv_time_online"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

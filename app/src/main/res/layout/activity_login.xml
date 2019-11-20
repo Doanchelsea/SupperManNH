@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoimg" />
+        app:srcCompat="@drawable/logo" />
 
         <LinearLayout
             android:id="@+id/form_login"
@@ -114,6 +114,17 @@
                 android:layout_marginTop="@dimen/space_16"
                 android:background="@drawable/button_black"
                 android:text="@string/text_login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16" />
+
+            <Button
+                android:id="@+id/btnRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_44"
+                android:layout_marginTop="@dimen/space_24"
+                android:background="@drawable/button_black"
+                android:text="@string/text_registration"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_16" />

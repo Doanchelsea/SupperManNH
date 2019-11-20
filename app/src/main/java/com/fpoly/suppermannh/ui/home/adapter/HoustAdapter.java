@@ -39,9 +39,11 @@ public class HoustAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if (list.size() == 0){
+            return;
+        }
         Houst houst = list.get(position);
         ViewHolder viewHolder = (ViewHolder) holder;
-
         viewHolder.tvName.setText(houst.getNames());
         viewHolder.tvAddress.setText(houst.getAddress());
         Glide.with(context)
@@ -52,6 +54,7 @@ public class HoustAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 .dontTransform()
                 .dontAnimate()
                 .into(viewHolder.roundedImageView);
+
         viewHolder.itemView.setOnClickListener(view -> {
             lisenner.onClick(list.get(position));
         });

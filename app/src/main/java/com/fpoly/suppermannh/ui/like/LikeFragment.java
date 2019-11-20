@@ -3,6 +3,7 @@ package com.fpoly.suppermannh.ui.like;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +12,7 @@ import com.fpoly.suppermannh.R;
 import com.fpoly.suppermannh.base.BaseFragment;
 import com.fpoly.suppermannh.lisenner.HomeLisenner;
 import com.fpoly.suppermannh.model.Houst;
+import com.fpoly.suppermannh.model.LoadingDialog;
 import com.fpoly.suppermannh.model.local.AppPreferencesHelper;
 import com.fpoly.suppermannh.model.local.DataManager;
 import com.fpoly.suppermannh.ui.home.homedetail.HomeDetailActivity;
@@ -34,6 +36,14 @@ public class LikeFragment extends BaseFragment implements LikeContract, HomeLise
     private LikePresenter presenter;
     @BindView(R.id.recycler_view_like_fragment)
     RecyclerView recyclerView;
+    @BindView(R.id.linearLayout_one_like_fragment)
+    LinearLayout linearLayout_one_like_fragment;
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        showLoading(false);
+    }
 
     @Override
     public void onResume() {
@@ -84,6 +94,7 @@ public class LikeFragment extends BaseFragment implements LikeContract, HomeLise
 
     @Override
     public void showSuccess() {
+        gone(linearLayout_one_like_fragment);
         visible(recyclerView);
         likeAdapter.notifyDataSetChanged();
     }
@@ -91,16 +102,28 @@ public class LikeFragment extends BaseFragment implements LikeContract, HomeLise
     @Override
     public void showNull() {
         gone(recyclerView);
+        visible(linearLayout_one_like_fragment);
     }
 
     @Override
     public void showError(int error) {
         Toasty.error(activity,error).show();
+        visible(linearLayout_one_like_fragment);
+    }
+
+    @Override
+    public void showLoading(boolean show) {
+        if (show){
+            LoadingDialog.getInstance().showLoading(context);
+        }else {
+            LoadingDialog.getInstance().hideLoading();
+        }
     }
 
 
     @Override
     public void onClick(Houst houst) {
+        showLoading(true);
         HomeDetailActivity.startActivity(activity,houst);
     }
 }

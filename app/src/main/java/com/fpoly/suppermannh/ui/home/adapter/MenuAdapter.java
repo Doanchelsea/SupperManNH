@@ -1,4 +1,4 @@
-package com.fpoly.suppermannh.model;
+package com.fpoly.suppermannh.ui.home.adapter;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -14,6 +14,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.fpoly.suppermannh.R;
 import com.fpoly.suppermannh.api.Server;
+import com.fpoly.suppermannh.lisenner.MenuLisenner;
+import com.fpoly.suppermannh.model.Menu;
 import com.fpoly.suppermannh.untils.FormatUtils;
 import com.makeramen.roundedimageview.RoundedImageView;
 
@@ -21,10 +23,12 @@ import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private MenuLisenner menuLisenner;
     private Context context;
     private List<Menu> lauList;
 
-    public MenuAdapter(Context context, List<Menu> lauList) {
+    public MenuAdapter(MenuLisenner menuLisenner, Context context, List<Menu> lauList) {
+        this.menuLisenner = menuLisenner;
         this.context = context;
         this.lauList = lauList;
     }
@@ -51,6 +55,7 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 .dontTransform()
                 .dontAnimate()
                 .into(viewHolder.imageView);
+
         if (menu.getDates().equals("day")){
             viewHolder.tvTime.setTextColor(0xCC00CC00);
             viewHolder.tvTime.setText("Cả ngày");
@@ -63,6 +68,9 @@ public class MenuAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             viewHolder.tvTime.setText("Bữa tối");
         }
 
+        viewHolder.itemView.setOnClickListener(view -> {
+            menuLisenner.menu(lauList.get(position));
+        });
     }
 
     @Override

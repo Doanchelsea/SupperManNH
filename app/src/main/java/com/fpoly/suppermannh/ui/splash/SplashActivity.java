@@ -24,15 +24,17 @@ import com.novoda.merlin.NetworkStatus;
 
 import java.util.concurrent.TimeUnit;
 
+import es.dmoral.toasty.Toasty;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class SplashActivity extends BaseActivity implements Connectable, Disconnectable, Bindable {
+public class SplashActivity extends BaseActivity implements Connectable, Disconnectable, Bindable,SplashContract {
     private DataManager dataManager;
     private AppPreferencesHelper appPreferencesHelper;
     private SharedPreferences mPrefs;
     private PrefManager prefManager;
+    private SplashPresenter splashPresenter;
     @Override
     protected void onResume() {
         super.onResume();
@@ -57,6 +59,7 @@ public class SplashActivity extends BaseActivity implements Connectable, Disconn
 
     @Override
     protected void initData() {
+        splashPresenter = new SplashPresenter(this,this);
         mPrefs = context.getSharedPreferences("", Context.MODE_PRIVATE);
         appPreferencesHelper = new AppPreferencesHelper(mPrefs,this);
         dataManager = new DataManager(appPreferencesHelper);
@@ -70,21 +73,14 @@ public class SplashActivity extends BaseActivity implements Connectable, Disconn
 
     @Override
     protected void addEvents() {
+        splashPresenter.getData(dataManager.getID());
         if (!prefManager.isFirstTimeLaunch()){
-
             if (StringUtils.isEmpty(dataManager.getID())){
                 addDisposable(Observable.just(0).delay(1000, TimeUnit.MILLISECONDS)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(aVoid -> {
                             LoginActivity.startActivity(this);
-                        }));
-            }else {
-                addDisposable(Observable.just(0).delay(1000, TimeUnit.MILLISECONDS)
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(aVoid -> {
-                            MainActivity.startActivity(this);
                         }));
             }
             return;
@@ -111,5 +107,26 @@ public class SplashActivity extends BaseActivity implements Connectable, Disconn
     @Override
     public void onDisconnect() {
 
+    }
+
+    @Override
+    public void showSucces(String token) {
+        if (!token.equals(dataManager.getToken())){
+            LoginActivity.startActivity(this);
+            dataManager.clearAllUserInfo();
+            Toasty.error(this,R.string.error_android).show();
+            return;
+        }
+        addDisposable(Observable.just(0).delay(1000, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(aVoid -> {
+                    MainActivity.startActivity(this);
+                }));
+    }
+
+    @Override
+    public void showError(int error) {
+        Toasty.error(this,error).show();
     }
 }

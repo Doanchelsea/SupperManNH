@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_100"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/fakeStatusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/space_30"
+            android:layout_height="@dimen/space_30"
+            android:layout_marginStart="@dimen/space_20"
+            android:layout_marginTop="@dimen/space_5"
+            app:srcCompat="@drawable/ic_arrow"
+            android:layout_marginLeft="@dimen/space_20" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_titlemenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_30"
+        android:layout_marginTop="@dimen/space_20"
+        android:text="@string/cancel_trip_toolbar_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_20"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/space_30" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_20"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/space_16">
+
+        <RadioGroup
+            android:id="@+id/rgReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/tv_btnConfirmVote"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/rbReason1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:button="@null"
+                android:drawableStart="?android:attr/listChoiceIndicatorSingle"
+                android:text="@string/cancel_trip_radio_text_reason_1"
+                android:textSize="@dimen/text_size_14"
+                android:drawableLeft="?android:attr/listChoiceIndicatorSingle" />
+
+            <RadioButton
+                android:id="@+id/rbReason2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:button="@null"
+                android:drawableStart="?android:attr/listChoiceIndicatorSingle"
+                android:text="@string/cancel_trip_radio_text_reason_2"
+                android:textSize="@dimen/text_size_14"
+                android:drawableLeft="?android:attr/listChoiceIndicatorSingle" />
+
+            <RadioButton
+                android:id="@+id/rbReason3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:button="@null"
+                android:drawableStart="?android:attr/listChoiceIndicatorSingle"
+                android:text="@string/cancel_trip_radio_text_reason_3"
+                android:textSize="@dimen/text_size_14"
+                android:drawableLeft="?android:attr/listChoiceIndicatorSingle" />
+
+            <RadioButton
+                android:id="@+id/rbOtherReason"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:button="@null"
+                android:drawableStart="?android:attr/listChoiceIndicatorSingle"
+                android:text="@string/cancel_trip_radio_text_reason_other"
+                android:textSize="@dimen/text_size_14"
+                android:drawableLeft="?android:attr/listChoiceIndicatorSingle" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/edtOtherReason"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_150"
+            android:background="@drawable/border_edittext"
+            android:enabled="false"
+            android:gravity="top"
+            android:hint="@string/cancel_trip_hint_other_reason"
+            android:inputType="textCapSentences"
+            android:maxLength="256"
+            android:paddingLeft="@dimen/space_10"
+            android:paddingTop="@dimen/space_10"
+            android:paddingRight="@dimen/space_10"
+            android:paddingBottom="@dimen/space_10"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/space_20"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_44"
+            android:layout_marginStart="@dimen/space_20"
+            android:layout_marginEnd="@dimen/space_20"
+            android:layout_weight="1"
+            android:background="@color/blue"
+            android:text="@string/cancel_trip_button_text_cancel_trip"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_14" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_dialog"
+    android:padding="@dimen/space_6"
+    android:layout_marginTop="@dimen/space_6"
+    android:layout_marginLeft="@dimen/space_6"
+    android:layout_marginRight="@dimen/space_6"
+    android:layout_height="wrap_content">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:scaleType="fitXY"
+        android:layout_marginRight="@dimen/space_6"
+        android:id="@+id/imgAvatar_xem_them"
+        app:riv_corner_radius="@dimen/space_10"
+        android:src="@color/blue"
+        android:layout_width="@dimen/space_80"
+        android:layout_height="@dimen/space_80" />
+    <TextView
+        android:id="@+id/tv_name_nh_xem_them"
+        android:text="Nguyễn Văn Đoàn"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        android:layout_toRightOf="@+id/imgAvatar_xem_them"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_below="@+id/tv_name_nh_xem_them"
+        android:id="@+id/tv_name_mon_an_xem_them"
+        android:text="Nguyễn Văn Đoàn"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_16"
+        android:layout_toRightOf="@+id/imgAvatar_xem_them"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="@dimen/text_size_12"
+        android:textColor="@color/red"
+        android:id="@+id/tv_price_mon_an_xem_them"
+        android:layout_marginTop="@dimen/space_2"
+        android:layout_toRightOf="@+id/imgAvatar_xem_them"
+        android:layout_below="@+id/tv_name_mon_an_xem_them"
+        android:text="300.000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="@dimen/text_size_12"
+        android:id="@+id/tv_time_mon_an_xem_them"
+        android:layout_marginTop="@dimen/space_2"
+        android:layout_toRightOf="@+id/imgAvatar_xem_them"
+        android:layout_below="@+id/tv_price_mon_an_xem_them"
+        android:text="300.000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

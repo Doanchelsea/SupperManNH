@@ -53,6 +53,7 @@ public class HomePresenter {
         }
         dots[0].setImageDrawable(ContextCompat.getDrawable(context, R.drawable.nonactive_dot));
     }
+
     public void setPosition(ViewPager viewPager,ImageView[] dots, int dotscount){
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -73,6 +74,7 @@ public class HomePresenter {
 
             }
         });
+
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(myTimerTask, 6000, 6000);
     }

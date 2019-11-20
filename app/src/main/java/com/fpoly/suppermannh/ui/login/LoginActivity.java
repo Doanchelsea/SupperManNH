@@ -16,6 +16,7 @@ import com.fpoly.suppermannh.model.LoadingDialog;
 import com.fpoly.suppermannh.model.local.AppPreferencesHelper;
 import com.fpoly.suppermannh.model.local.DataManager;
 import com.fpoly.suppermannh.ui.main.MainActivity;
+import com.fpoly.suppermannh.ui.registration.RegistrationActivity;
 import com.fpoly.suppermannh.untils.StringUtils;
 import com.fpoly.suppermannh.untils.ValidateUtils;
 import com.jakewharton.rxbinding3.view.RxView;
@@ -38,6 +39,8 @@ public class LoginActivity extends BaseActivity implements Connectable, Disconne
     EditText edtPassword;
     @BindView(R.id.btnLogin)
     Button btnLogin;
+    @BindView(R.id.btnRegistration)
+    Button btnRegistration;
     private LoginPresenter presenter;
     private DataManager dataManager;
     private AppPreferencesHelper appPreferencesHelper;
@@ -97,6 +100,12 @@ public class LoginActivity extends BaseActivity implements Connectable, Disconne
                 presenter.login(user,pass);
             }
         }));
+        addDisposable(RxView.clicks(btnRegistration)
+                .throttleFirst(2,TimeUnit.SECONDS)
+                .compose(bindToLifecycle())
+                .subscribe(unit -> {
+                    RegistrationActivity.startActivity(this);
+                }));
     }
 
     @Override
@@ -137,5 +146,10 @@ public class LoginActivity extends BaseActivity implements Connectable, Disconne
         }else {
             LoadingDialog.getInstance().hideLoading();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

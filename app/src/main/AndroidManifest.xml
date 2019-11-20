@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fpoly.suppermannh">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.home.homedetail.HomeDetailActivity"></activity>
+
+        <service android:name=".firebase.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ui.registration.RegistrationActivity"></activity>
+        <activity android:name=".ui.bandat.cancel.CancelActivity" />
+        <activity android:name=".ui.home.menudetail.MenuDetailActivity" />
+        <activity android:name=".ui.online.detail.OnlineDetailActivity" />
+        <activity android:name=".ui.online.OnlineActivity" />
+        <activity android:name=".ui.home.homedetail.HomeDetailActivity" />
         <activity android:name=".ui.account.history.historydetail.HistoryDetailActivity" />
         <activity android:name=".ui.account.history.HistoryActivity" />
         <activity android:name=".ui.account.password.PasswordActivity" />

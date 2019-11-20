@@ -12,20 +12,29 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.fpoly.suppermannh.R;
+import com.fpoly.suppermannh.lisenner.HomeLisenner;
+import com.fpoly.suppermannh.model.Houst;
+import com.fpoly.suppermannh.untils.StringUtils;
 import com.makeramen.roundedimageview.RoundedImageView;
 
+import java.util.List;
+
+import es.dmoral.toasty.Toasty;
+
 public class SlideViewPager extends PagerAdapter {
+    private HomeLisenner homeLisenner;
+    private List<Houst> houst;
     private Context context;
+
     private Integer[] images = {
             R.drawable.anhnh1,
             R.drawable.nhahang1,
             R.drawable.nhahang2,
-            R.drawable.nhahang3,
-            R.drawable.nhahang4,
-            R.drawable.nhahang5,
-            R.drawable.nhahang6};
+            R.drawable.nhahang3,};
 
-    public SlideViewPager(Context context) {
+    public SlideViewPager(HomeLisenner homeLisenner, List<Houst> houst, Context context) {
+        this.homeLisenner = homeLisenner;
+        this.houst = houst;
         this.context = context;
     }
 
@@ -46,21 +55,20 @@ public class SlideViewPager extends PagerAdapter {
         ImageView imageView = view.findViewById(R.id.image_cutom_layout_home);
         imageView.setImageResource(images[position]);
         view.setOnClickListener(view1 -> {
-            if(position == 0){
-                Toast.makeText(context, "Slide 1 Clicked", Toast.LENGTH_SHORT).show();
-            } else if(position == 1){
-                Toast.makeText(context, "Slide 2 Clicked", Toast.LENGTH_SHORT).show();
-            } else if (position ==2){
-                Toast.makeText(context, "Slide 3 Clicked", Toast.LENGTH_SHORT).show();
-            }else if (position == 3){
-                Toast.makeText(context, "Slide 4 Clicked", Toast.LENGTH_SHORT).show();
-            }else if (position == 4){
-                Toast.makeText(context, "Slide 5 Clicked", Toast.LENGTH_SHORT).show();
-            }else if (position == 5){
-                Toast.makeText(context, "Slide 6 Clicked", Toast.LENGTH_SHORT).show();
-            }else if (position == 6){
-                Toast.makeText(context, "Slide 7 Clicked", Toast.LENGTH_SHORT).show();
+            if (houst.size() == 0){
+                return;
+            }else {
+                if(position == 0){
+                    homeLisenner.onClick(houst.get(0));
+                } else if(position == 1){
+                    homeLisenner.onClick(houst.get(1));
+                } else if (position ==2){
+                    homeLisenner.onClick(houst.get(2));
+                }else if (position == 3){
+                    homeLisenner.onClick(houst.get(3));
+                }
             }
+
         });
 
         container.addView(view);
