@@ -110,19 +110,21 @@ public class LoginActivity extends BaseActivity implements Connectable, Disconne
 
     @Override
     public void onBind(NetworkStatus networkStatus) {
-        if (!networkStatus.isAvailable()){
+        if (!networkStatus.isAvailable()) {
             onDisconnect();
+        }else {
+            onConnect();
         }
     }
 
     @Override
     public void onConnect() {
-
+        
     }
 
     @Override
     public void onDisconnect() {
-        showToastDisconnect();
+
     }
 
 

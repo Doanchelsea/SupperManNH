@@ -49,6 +49,13 @@ public class Houst implements Parcelable {
         this.images = images;
         this.address = address;
     }
+    public Houst(int id, String names, double lat, double lng, String images) {
+        this.id = id;
+        this.names = names;
+        this.lat = lat;
+        this.lng = lng;
+        this.images = images;
+    }
 
 
     protected Houst(Parcel in) {

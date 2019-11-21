@@ -95,9 +95,7 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
                      page++;
                      presenter.getDataHoust(housts,page,count);
                  }));
-
     }
-
     @Override
     public void onStart() {
         shimmerFrameLayout.startShimmer();
@@ -149,7 +147,6 @@ public class HomeFragment extends BaseFragment implements HomeContract, HomeLise
     @Override
     protected void initDatas() {
         houstAdapter = new HoustAdapter(activity,housts,this);
-
         recycler_view_houst_home.setHasFixedSize(true);
         recycler_view_houst_home.setLayoutManager(manager);
         recycler_view_houst_home.setAdapter(houstAdapter);

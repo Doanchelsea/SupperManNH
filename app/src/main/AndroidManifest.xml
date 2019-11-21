@@ -18,20 +18,34 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".ui.registration.RegistrationActivity"></activity>
-        <activity android:name=".ui.bandat.cancel.CancelActivity" />
-        <activity android:name=".ui.home.menudetail.MenuDetailActivity" />
-        <activity android:name=".ui.online.detail.OnlineDetailActivity" />
-        <activity android:name=".ui.online.OnlineActivity" />
-        <activity android:name=".ui.home.homedetail.HomeDetailActivity" />
-        <activity android:name=".ui.account.history.historydetail.HistoryDetailActivity" />
-        <activity android:name=".ui.account.history.HistoryActivity" />
-        <activity android:name=".ui.account.password.PasswordActivity" />
-        <activity android:name=".ui.account.detail.AccountDetailActivity" />
-        <activity android:name=".ui.login.LoginActivity" />
-        <activity android:name=".ui.ads.AdsActivity" />
-        <activity android:name=".ui.main.MainActivity" />
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity android:name=".ui.registration.RegistrationActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.bandat.cancel.CancelActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.home.menudetail.MenuDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.online.detail.OnlineDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.online.OnlineActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.home.homedetail.HomeDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.account.history.historydetail.HistoryDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.account.history.HistoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.account.password.PasswordActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.account.detail.AccountDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.ads.AdsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.main.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.splash.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

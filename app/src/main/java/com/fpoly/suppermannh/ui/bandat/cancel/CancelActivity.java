@@ -173,17 +173,19 @@ public class CancelActivity extends BaseActivity implements Connectable, Bindabl
     public void onBind(NetworkStatus networkStatus) {
         if (!networkStatus.isAvailable()){
             onDisconnect();
+        }else {
+            onConnect();
         }
     }
 
     @Override
     public void onConnect() {
-
+        hideDialog();
     }
 
     @Override
     public void onDisconnect() {
-        showToastDisconnect();
+        showdialog();
     }
 
     @Override

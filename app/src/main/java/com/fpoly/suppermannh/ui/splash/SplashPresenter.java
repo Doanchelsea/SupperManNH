@@ -30,7 +30,7 @@ public class SplashPresenter {
     public void getData(String iduser){
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.tokenuser, response -> {
-            if (response.length() != 2) {
+            if (response.length() != 2 && response != null) {
                 try {
                     JSONArray jsonArray = new JSONArray(response);
                     for (int i=0; i<jsonArray.length(); i++){

@@ -156,7 +156,6 @@ public class AccoutDetailPresenter {
                         namenh = jsonObject.getString("namenh");
                         list.add(new Menu(id,idmonan,dates,descriptions,images,names,prices,idnhahang,namenh));
                     }
-
                     contract.showSuccessdrinks(jsonArray.length());
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -36,4 +36,5 @@ public class Server {
     public static String duongdanupdatetoken = "http://"+localhost+"/supper/updatetokenuser.php";
     public static String tokenuser = "http://"+localhost+"/supper/tokenuser.php";
     public static String duongdanmenus = "http://"+localhost+"/supper/menuusers.php";
+    public static String duongdanhousts = "http://"+localhost+"/supper/houstuser.php";
 }

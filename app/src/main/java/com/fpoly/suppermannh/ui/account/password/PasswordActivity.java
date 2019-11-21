@@ -126,17 +126,19 @@ public class PasswordActivity extends BaseActivity implements Connectable, Binda
     public void onBind(NetworkStatus networkStatus) {
         if (!networkStatus.isAvailable()){
             onDisconnect();
+        }else {
+            onConnect();
         }
     }
 
     @Override
     public void onConnect() {
-
+        hideDialog();
     }
 
     @Override
     public void onDisconnect() {
-        showToastDisconnect();
+        showdialog();
     }
 
     @Override

@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.fpoly.suppermannh.R;
 import com.fpoly.suppermannh.api.Server;
+import com.fpoly.suppermannh.lisenner.MenuDetailLisenner;
 import com.fpoly.suppermannh.model.Menu;
 import com.fpoly.suppermannh.untils.FormatUtils;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -27,10 +28,12 @@ public class MenuDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private boolean onLoadMore = true;
     Context context;
     List<Menu> list;
+    private MenuDetailLisenner menuDetailLisenner;
 
-    public MenuDetailAdapter(Context context, List<Menu> list) {
+    public MenuDetailAdapter(Context context, List<Menu> list,MenuDetailLisenner menuDetailLisenner) {
         this.context = context;
         this.list = list;
+        this.menuDetailLisenner = menuDetailLisenner;
     }
 
     public boolean isOnLoadMore() {
@@ -88,9 +91,10 @@ public class MenuDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 viewHordel.tvDate.setTextColor(0x99FF9900);
                 viewHordel.tvDate.setText("Bữa tối");
             }
-//            viewHordel.itemView.setOnClickListener(view -> {
-//                monLisenner.onclick(list.get(position));
-//            });
+            viewHordel.itemView.setOnClickListener(view -> {
+                menuDetailLisenner.onclick(list.get(position));
+            });
+
         } else if (holder instanceof MenuDetailAdapter.LoadHolder){
 
         }

@@ -73,7 +73,6 @@ public class SplashActivity extends BaseActivity implements Connectable, Disconn
 
     @Override
     protected void addEvents() {
-        splashPresenter.getData(dataManager.getID());
         if (!prefManager.isFirstTimeLaunch()){
             if (StringUtils.isEmpty(dataManager.getID())){
                 addDisposable(Observable.just(0).delay(1000, TimeUnit.MILLISECONDS)
@@ -82,6 +81,8 @@ public class SplashActivity extends BaseActivity implements Connectable, Disconn
                         .subscribe(aVoid -> {
                             LoginActivity.startActivity(this);
                         }));
+            }else {
+                splashPresenter.getData(dataManager.getID());
             }
             return;
         }
@@ -117,7 +118,8 @@ public class SplashActivity extends BaseActivity implements Connectable, Disconn
             Toasty.error(this,R.string.error_android).show();
             return;
         }
-        addDisposable(Observable.just(0).delay(1000, TimeUnit.MILLISECONDS)
+
+        addDisposable(Observable.just(0).delay(500, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aVoid -> {
@@ -127,6 +129,8 @@ public class SplashActivity extends BaseActivity implements Connectable, Disconn
 
     @Override
     public void showError(int error) {
+        dataManager.clearAllUserInfo();
+        LoginActivity.startActivity(this);
         Toasty.error(this,error).show();
     }
 }

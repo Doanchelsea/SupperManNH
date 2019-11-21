@@ -89,7 +89,6 @@ public class HomePresenter {
             double lng;
             String images;
             String address;
-
             if (response != null &&  response.length() != 2){
                 try {
                     JSONArray jsonArray = new JSONArray(response);

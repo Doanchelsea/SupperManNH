@@ -2,6 +2,7 @@ package com.fpoly.suppermannh.ui.home.menudetail;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,9 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fpoly.suppermannh.R;
 import com.fpoly.suppermannh.base.BaseActivity;
+import com.fpoly.suppermannh.lisenner.MenuDetailLisenner;
+import com.fpoly.suppermannh.model.Houst;
 import com.fpoly.suppermannh.model.Menu;
 import com.fpoly.suppermannh.model.loadmore.EndlessRecyclerViewScrollListener;
 import com.fpoly.suppermannh.ui.home.adapter.MenuDetailAdapter;
+import com.fpoly.suppermannh.ui.online.OnlineActivity;
 import com.jakewharton.rxbinding3.view.RxView;
 import com.novoda.merlin.Bindable;
 import com.novoda.merlin.Connectable;
@@ -28,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 import butterknife.BindView;
 import es.dmoral.toasty.Toasty;
 
-public class MenuDetailActivity extends BaseActivity implements Connectable, Disconnectable, Bindable,MenuDetailContract {
+public class MenuDetailActivity extends BaseActivity implements Connectable, Disconnectable, Bindable,MenuDetailContract, MenuDetailLisenner {
     public static void startActivity(Activity context, int idmon){
         context.startActivity(new Intent(context, MenuDetailActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -45,6 +49,7 @@ public class MenuDetailActivity extends BaseActivity implements Connectable, Dis
     RecyclerView recyclerView;
     private MenuDetailPresenter xemthemPresenter;
     int page = 1;
+    List<Houst> housts = new ArrayList<>();
 
     @Override
     protected void onResume() {
@@ -94,7 +99,7 @@ public class MenuDetailActivity extends BaseActivity implements Connectable, Dis
             finish();
         }));
 
-        xemthemAdapter = new MenuDetailAdapter(this,menus);
+        xemthemAdapter = new MenuDetailAdapter(this,menus,this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(xemthemAdapter);
@@ -112,17 +117,19 @@ public class MenuDetailActivity extends BaseActivity implements Connectable, Dis
     public void onBind(NetworkStatus networkStatus) {
         if (!networkStatus.isAvailable()){
             onDisconnect();
+        }else {
+            onConnect();
         }
     }
 
     @Override
     public void onConnect() {
-
+        hideDialog();
     }
 
     @Override
     public void onDisconnect() {
-        showToastDisconnect();
+        showdialog();
     }
 
     @Override
@@ -138,4 +145,13 @@ public class MenuDetailActivity extends BaseActivity implements Connectable, Dis
         Toasty.error(this,error).show();
     }
 
+    @Override
+    public void showSuccess(List<Houst> housts,Menu menu) {
+        OnlineActivity.startActivity(this,menu,housts.get(0));
+    }
+
+    @Override
+    public void onclick(Menu menu) {
+        xemthemPresenter.getHouts(menu,housts);
+    }
 }

@@ -181,17 +181,19 @@ public class HomeDetailActivity extends BaseActivity implements Connectable, Dis
     public void onBind(NetworkStatus networkStatus) {
         if (!networkStatus.isAvailable()){
             onDisconnect();
+        }else {
+            onConnect();
         }
     }
 
     @Override
     public void onConnect() {
-
+        hideDialog();
     }
 
     @Override
     public void onDisconnect() {
-        showToastDisconnect();
+        showdialog();
     }
     private void appBarLayout(){
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {

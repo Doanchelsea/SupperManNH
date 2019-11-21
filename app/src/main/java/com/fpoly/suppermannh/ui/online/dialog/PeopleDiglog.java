@@ -25,7 +25,6 @@ import butterknife.BindView;
 import es.dmoral.toasty.Toasty;
 
 public class PeopleDiglog extends BaseDiglog implements PeopleContract, PeopleLisenner {
-
     private OnlineDetailLisenner onlineLisenner;
     public static PeopleDiglog newInstance() {
         Bundle args = new Bundle();

@@ -95,8 +95,8 @@ public abstract class BaseDiglog extends RxDialogFragment {
         return  super.getActivity();
     }
     private void setupCancelableDialog() {
-        setCancelable(true);
-        getDialog().setCanceledOnTouchOutside(true);
+        setCancelable(false);
+        getDialog().setCanceledOnTouchOutside(false);
     }
 
     protected void addDisposable(Disposable disposable) {
@@ -106,6 +106,7 @@ public abstract class BaseDiglog extends RxDialogFragment {
         compositeDisposable.add(disposable);
     }
     protected void hideDialog() {
+
         if (getDialog() != null && getDialog().isShowing()) {
             getDialog().dismiss();
         }

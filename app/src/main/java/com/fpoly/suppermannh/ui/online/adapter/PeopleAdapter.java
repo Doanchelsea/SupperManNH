@@ -54,6 +54,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public int getItemCount() {
         return peoples.size();
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         View view;
         TextView textView;

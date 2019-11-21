@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_dialog"
+    android:layout_width="match_parent"
+    android:padding="@dimen/space_10"
+    android:layout_height="@dimen/space_70"
+    android:orientation="horizontal">
+    <com.wang.avi.AVLoadingIndicatorView
+        android:layout_marginLeft="@dimen/space_20"
+        app:indicatorColor="#00BCD4"
+        app:indicatorName="LineSpinFadeLoaderIndicator"
+        android:id="@+id/dialog_trip_notification_loading_indicator"
+        style="@style/AVLoadingIndicatorView"
+        android:layout_width="@dimen/space_50"
+        android:layout_height="@dimen/space_50" />
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_size_18"
+        android:text="Mất kết nối mạng"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

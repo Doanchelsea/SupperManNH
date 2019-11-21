@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.fpoly.suppermannh.R;
+import com.fpoly.suppermannh.dialog.DialogDisconnect;
 import com.fpoly.suppermannh.untils.StringUtils;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -49,6 +50,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     protected Context context;
     protected Merlin merlin;
     private Unbinder unbinder;
+    private DialogDisconnect dialog = DialogDisconnect.newInstance();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -103,6 +105,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     protected void registerBindable(Bindable bindable) {
         merlin.registerBindable(bindable);
     }
+
     protected void loadAvatar(String url, ImageView ivAvatar) {
         if (url == null || ivAvatar == null) {
             return;
@@ -226,5 +229,10 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
-
+    protected void showdialog(){
+        dialog.show(getSupportFragmentManager(),dialog.getTag());
+    }
+    protected void hideDialog() {
+           dialog.hideDialog();
+    }
 }
